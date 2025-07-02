@@ -1,12 +1,12 @@
-import sys
-import math
+import sys #Импорт модуля для работы с консолью
+import math #Импорт модуля для использования математических инструментов
 
-# Проверка на наличие двух файлов
+#Проверка на наличие двух файлов
 if len(sys.argv) != 3:
-    print("Введено неверное количество аргументов")
+    print("Введено неверное количество файлов")
     sys.exit(1)
 
-# Открытие первого файла и считывание центра и радиуса
+#Открытие первого файла и считывание центра и радиуса
 file = open(sys.argv[1], "r")
 line1 = file.readline().strip()
 x_c, y_c = line1.split()
@@ -15,7 +15,7 @@ y_c = float(y_c)
 r = float(file.readline().strip())
 file.close()
 
-# Открытие второго файла и получение точек
+#Открытие второго файла и получение точек
 file = open(sys.argv[2], "r")
 points = []
 for line in file:
@@ -25,12 +25,12 @@ for line in file:
         points.append( (float(x), float(y)) )
 file.close()
 
-# Проверка каждой точки
+#Проверка каждой точки
 for p in points:
     x = p[0]
     y = p[1]
     dist = math.sqrt((x - x_c)**2 + (y - y_c)**2)
-# Проверяем где точка находится
+#Проверка местонахождения точки
     if abs(dist - r) < 0.000000000001:
         print(0)
     elif dist < r:
