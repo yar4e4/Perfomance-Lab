@@ -16,7 +16,7 @@ def fill_values(test, values_map):
 def main():
     #Проверка, что при запуске передали ровно 3 аргумента (имена файлов)
     if len(sys.argv) != 4:
-        print("Передано неверное количество файлов")
+        print("Формат ввода: python3 task3 values.json tests.json report.json")
         sys.exit(1)
 
     values_file = sys.argv[1]
